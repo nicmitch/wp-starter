@@ -1,0 +1,19 @@
+.block-slider-gallery{
+    .slide{
+        height: 50vh;
+        @include bg-cover();
+
+        @include breakpoint(medium){
+            height: 40vh;
+        }
+
+        @include breakpoint(large){
+            min-height: 400px;
+        }
+
+        @include breakpoint(xlarge){
+            min-height: 500px;
+        }
+    }
+
+}

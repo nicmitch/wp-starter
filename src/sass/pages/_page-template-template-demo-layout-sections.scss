@@ -1,0 +1,103 @@
+body.page-template-template-demo-layout-sections{
+  #hero{
+    @include block-simple-hero();
+    @include block-simple-hero-overlay();
+  }
+
+  #block-simple-text{
+    @include block-simple-text();
+  }
+
+  #block-text-grid{
+    @include block-text-grid();
+  }
+
+  #hero2{
+    @include block-simple-hero(center);
+    @include block-simple-hero-hover-effect-overlay();
+  }
+
+  #block-simple-text2{
+    @include block-simple-text(center, 6);
+  }
+
+  #block-hero-slideshow-bgimage{
+    @include block-hero-slideshow-bgimage();
+  }
+
+  #block-text-grid2{
+    @include block-text-grid(4, 4);
+  }
+
+  #block-text-grid-details{
+    @include block-text-grid-details(6, 4);
+  }
+
+  #block-hero-slideshow-image{
+    @include block-hero-slideshow-image();
+  }
+
+  #block-text-image-v1{
+    @include block-text-image-v1();
+  }
+
+  #block-text-image-v1-2{
+    @include block-text-image-v1(right);
+  }
+
+  #block_text_image_v2{
+    @include block-text-image-v2(left);
+  }
+
+  #block_text_image_v2_2{
+    @include block-text-image-v2();
+  }
+
+  #block_accordion{
+    @include block-accordion();
+  }
+
+  #lombiz-block-1{
+    @include lombiz-block();
+  }
+
+  #lombiz-block-2{
+    @include lombiz-block(left);
+  }
+
+  #lombiz-block-3{
+    @include lombiz-block();
+
+    .text{
+      .inner{
+        @include flex-align(null, bottom);
+      }
+    }
+  }
+
+  #lombiz-block-4{
+    @include lombiz-block(left);
+
+    .text{
+      .inner{
+        @include flex-align(null, top);
+      }
+    }
+  }
+
+  #block-gallery-1{
+    @include block-gallery();
+  }
+
+  #block-gallery-2{
+    @include block-gallery(3);
+  }
+
+  #block-gallery-full{
+    @include block-gallery(3);
+
+    .inner{
+      @include flex-grid-row(null, expand);
+    }
+  }
+}

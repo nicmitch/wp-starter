@@ -1,0 +1,133 @@
+#main {
+    .main__inner {
+        position: relative;
+    }
+    //article,
+    aside {
+        @include spacing-half-y(margin-bottom);
+    }
+}
+
+.main-container {
+    position: relative;
+}
+
+
+a {
+    //transition: all $transitions-default-time;
+    @include disable-mouse-outline;
+    &::before,
+    &::after {
+        //transition: all $transitions-default-time;
+    }
+    /*
+		Underlined links by default
+	*/
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+    /*
+		Handle tel links
+	*/
+    &[href^=tel] {
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none !important;
+        }
+        @include breakpoint(large) {
+            text-decoration: none !important;
+        }
+    }
+}
+
+table {
+    @include table();
+}
+
+
+/*
+    Effect on images html native lazy loading?
+    class "loaded" added by js
+*/
+
+
+/*
+img[loading="lazy"]{
+    opacity: 0;
+    transition: $transitions-default-linear-slow;
+
+    &.lazy-loaded{
+        opacity: 1;
+    }
+}
+*/
+
+
+/*
+	Override text selection background and color
+*/
+
+::selection {
+    background: $primary-color;
+    color: $white;
+}
+
+.border {
+    border-bottom: 1px solid $medium-gray;
+}
+
+
+/*
+    By default last paragraph doesn't have margin bottom,
+    to avoid extra space in its container
+*/
+
+p:last-child:not(.form-row) {
+    margin-bottom: 0px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+article {
+    img {
+        //margin-bottom: 30px;
+        // Wordpress images alignment
+        &.alignleft {
+            @extend .float-left;
+        }
+        &.alignright {
+            @extend .float-right;
+        }
+        &.aligncenter {
+            @extend .float-center;
+        }
+        &.alignleft,
+        &.float-left {
+            margin-right: 30px;
+        }
+        &.alignright,
+        &.float-right {
+            margin-left: 30px;
+        }
+    }
+}
+
+.label {
+    margin-bottom: 5px;
+}
+
+
+/*
+    Prevent FOUC
+    https://get.foundation/sites/docs/responsive-navigation.html#preventing-fouc
+*/
+
+.no-js {
+    #main-menu {
+        display: none;
+    }
+}

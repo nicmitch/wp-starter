@@ -1,0 +1,28 @@
+/*
+	Apply to contiainer with article and aside inside it
+*/
+@mixin evo-template-sidebar-right() {
+  @include flex-grid-row();
+
+  article {
+    @include flex-grid-column(12);
+
+    @include breakpoint(large) {
+      @include flex-grid-column(8);
+    }
+  }
+
+  aside {
+    @include flex-grid-column(12);
+
+    @include breakpoint(large) {
+      @include flex-grid-column(4);
+    }
+  }
+}
+
+body.template-sidebar-right {
+  #main {
+    @include evo-template-sidebar-right();
+  }
+}

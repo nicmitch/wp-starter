@@ -1,0 +1,6 @@
+
+.large-1-of-5 {
+  @include breakpoint(large) {
+    @include flex-grid-column(1 of 5);
+  }
+}

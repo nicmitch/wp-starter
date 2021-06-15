@@ -1,0 +1,19 @@
+.block-gallery-slider{
+    padding-bottom: 45px;
+
+    & > .row{
+        & > .column{
+            position: relative;
+        }
+    }
+
+    .swiper-pagination{
+        bottom: -30px;
+        left: 0;
+        width: 100%;
+
+        .swiper-pagination-bullet{
+            margin: 0 4px;
+        }
+    }
+}

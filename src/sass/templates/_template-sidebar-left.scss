@@ -1,0 +1,53 @@
+/*
+	Apply to contiainer with article and aside inside it
+*/
+@mixin template-sidebar-left(){
+  @include spacing-half-y(padding-bottom);
+
+  article{
+    @include flex-grid-column(12);
+    @include spacing-half-y(padding-bottom);
+
+    @include breakpoint(large){
+      @include flex-grid-column(10);
+
+      order: 2;
+    }
+  }
+
+  aside{
+    @include flex-grid-column(12);
+    @include spacing-half-y(padding-bottom);
+
+    @include breakpoint(large){
+      @include flex-grid-column(2);
+
+      order: 1;
+    }
+
+    .menu {
+      font-size: rem-calc(14);
+      margin-top: 0.6rem;
+
+      a {
+        color: $body-font-color;
+        padding: 0.4rem 0;
+      }
+
+      .active a,
+      a:hover, a:active {
+        color: $primary-color;
+      }
+
+    }
+
+  }
+
+
+}
+
+body.template-sidebar-left {
+  #main {
+    @include template-sidebar-left();
+  }
+}

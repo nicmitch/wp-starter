@@ -1,0 +1,76 @@
+.form-newsletter {
+    @include breakpoint (large) {
+        padding-top: 22px;
+    }
+    .input-wrapper {
+        @include breakpoint (medium down) {
+            padding-bottom: 0px !important;
+        }
+    }
+    input {
+        color: $black;
+    }
+    label {
+        padding-bottom: 0;
+    }
+    .form-error {
+        bottom: -25px;
+    }
+    .privacy-wrapper {
+        .privacy {
+            display: block;
+            max-width: 95%;
+            margin-top: 5px;
+            //margin: 0 auto;
+            label {
+                position: relative;
+                padding-left: 20px;
+                line-height: 1;
+                color: $medium-gray;
+                padding-bottom: 22px;
+                input {
+                    position: absolute;
+                    left: 0;
+                    top: 2px;
+                    margin-bottom: 0px;
+                }
+                &.is-invalid-label {
+                    .form-error {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .form-error {
+            bottom: -8px;
+        }
+    }
+    #newsletter-submit {
+        padding-left: 0;
+        padding-right: 0;
+        .button {
+            margin-top: 0;
+            color: $white;
+            transition: $transitions-default;
+            border: none;
+            &:hover,
+            &:focus {
+                transition: $transitions-default;
+                color: $white;
+            }
+            width: 100%;
+            //text-transform: uppercase;
+            font-weight: 700;
+            @include breakpoint (large) {
+                margin-top: 0;
+            }
+            &:hover {
+                color: $white;
+            }
+            &:focus {
+                color: $white;
+            }
+        }
+    }
+}

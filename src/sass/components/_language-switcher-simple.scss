@@ -1,0 +1,10 @@
+.language-switcher-simple-link {
+    a {
+        color: $gray_light2;
+        text-transform: uppercase;
+        font-size: 12px;
+        &:hover {
+            color: $brand;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.block-text-image{
+    .block__image{
+        margin-top: 30px;
+        @include breakpoint(large){
+            margin-top: 0px;
+        }
+    }
+
+    &.image-position--left{
+        @include breakpoint(large){
+            .block__content{
+                order: 2;
+            }
+
+            .block__image{
+                order: 1;
+            }
+        }
+    }
+}

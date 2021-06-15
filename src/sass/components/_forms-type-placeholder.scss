@@ -1,0 +1,41 @@
+form.type-placeholder {
+    [type='text'],
+    [type='password'],
+    [type='date'],
+    [type='datetime'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='week'],
+    [type='email'],
+    [type='number'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='url'],
+    [type='color'],
+    textarea {
+        border: none;
+        border-bottom: thin solid $gray_light3;
+        margin-bottom: 0px;
+        &.is-invalid-input:not(:focus) {
+            border: thin solid $alert_red;
+        }
+    }
+    .input-wrapper {
+        position: relative;
+        padding-bottom: 5px;
+    }
+    .form-error {
+        bottom: 6px;
+    }
+    #privacy-wrapper {
+        label {
+            position: relative;
+            transition: $transitions-default;
+            &.is-invalid-label {
+                transition: $transitions-default;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

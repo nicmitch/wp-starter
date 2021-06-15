@@ -1,0 +1,6 @@
+.cache-loader
+node_modules/
+templates/compiled/**
+*.DS_Store
+dist/*
+!dist/fonts

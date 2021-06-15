@@ -1,0 +1,34 @@
+    .ce-banner {
+        @include gutter-as-property(bottom);
+        @include gutter-as-property(left);
+        @include gutter-as-property(right);
+        background: rgba($black0, 0.9);
+        background: transparent;
+        color: $text-color;
+        .row {
+            background: #fff;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .side--right {
+            .ce-accept {
+                padding-left: inherit;
+                padding-right: inherit;
+                width: 100%;
+                border-radius: 5px;
+                text-transform: uppercase;
+                @include breakpoint (large) {
+                    width: 70%;
+                }
+            }
+        }
+        /*
+    .side--left {
+
+    }
+
+    .side--right {
+
+    }
+    */
+    }

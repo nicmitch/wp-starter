@@ -1,0 +1,20 @@
+
+@mixin block-accordion() {
+  @include block-columns();
+
+  .section__intro {
+    @include spacing-quart-y(margin-bottom);
+  }
+
+  .section__outro {
+    @include spacing-quart-y(margin-top);
+  }
+
+  .accordion-wrapper {
+    @include flex-grid-column(12);
+  }
+}
+
+.block-accordion {
+  @include block-accordion();
+}

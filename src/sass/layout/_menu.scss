@@ -1,0 +1,11 @@
+
+.menu.vertical {
+    a {
+        padding-left: 0;
+
+        @include breakpoint(medium) {
+            padding-top: 0.2rem;
+            padding-bottom: 0.4rem;
+        }
+    }
+}

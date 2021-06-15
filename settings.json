@@ -1,0 +1,25 @@
+{
+    "devSiteName": "https://www.wp-starter.test",
+
+    "css": {
+        "sassMainFiles": "./src/sass/*.scss",
+        "sassFiles": ["./src/sass/**/*.scss", "./template-parts/**/**/*.scss"],
+        "buildDir": "./dist/css/"
+    },
+
+    "js": {
+        "entry": "./src/js/main.js",
+        "jsFiles": "./src/js/**/*.js",
+        "buildDir": "./dist/js/"
+    },
+
+    "images": {
+        "srcDir": "./assets/images/",
+        "buildDir": "./dist/images/"
+    },
+
+    "fonts": {
+        "srcDir": "./assets/fonts/",
+        "buildDir": "./dist/fonts/"
+    }
+}

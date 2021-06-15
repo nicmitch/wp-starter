@@ -1,0 +1,74 @@
+/*
+    Desktop Menu: style for simple dropdown
+*/
+
+#main-menu {
+    &>ul {
+        @include breakpoint(large) {
+            /*
+            level 1: li
+        */
+            &>.is-dropdown-submenu-parent {
+                /*
+                level 2: ul
+                style for open state
+            */
+                &.is-active {
+                    &>.is-dropdown-submenu {
+                        opacity: 1;
+                        visibility: visible;
+                        /*
+                    transform: translateY(0px);
+                    */
+                    }
+                }
+                /*
+                level 2: ul
+                default/close style
+            */
+                &>.is-dropdown-submenu {
+                    background: $white;
+                    border: thin solid $gray_light3;
+                    width: 250px;
+                    padding: 10px 0px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: $transitions-default-fast;
+                    top: 100%;
+                    left: 0px;
+                    z-index: $zi-header-elements;
+                    display: block !important; // required for transition
+                    /*
+                transform: translateY(-5px);
+                */
+                    /* level 2: li */
+                    &>li {
+                        /* level 2: a */
+                        &>a {
+                            font-size: 15px;
+                        }
+                    }
+                }
+                /*
+                Last link of li in level 1
+                no padding-right if simple link and not dropdown parent
+            */
+                &:last-child:not(.is-dropdown-submenu-parent) {
+                    a {
+                        padding-right: 0px;
+                    }
+                }
+            }
+            /*
+            Remove padding-right if last menu item not dropdown
+        */
+            &>li:last-child {
+                &:not(.is-dropdown-submenu-parent) {
+                    a {
+                        padding-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,317 @@
+/*
+@mixin content-spacer($property, $factor: 1) {
+  @include res-prop($property, $grid-column-gutter, (small: 1 * $factor, medium: 1.5 * $factor, large: 1.5 * $factor, xlarge: 1.5 * $factor));
+
+  @include breakpoint(small only) {
+    #{$property} : 2rem * $factor;
+  }
+}
+*/
+
+/*
+@mixin section-spacer($property, $factor: 1 ){
+  @include res-prop($property, $grid-column-gutter, (small: 4 * $factor, medium: 3 * $factor, large: 3 * $factor, xlarge: 3 * $factor ));
+}
+*/
+
+
+/*
+    Define a property based on e responsive map of values, optionally multiplied by a factor
+*/
+@mixin responsive-property($property: padding-top, $space-data: $body-spacing, $factor: 1 ){
+  @each $query, $space in $space-data {
+    @include breakpoint($query){
+      #{$property}: $space * $factor;
+    }
+  }
+}
+
+// Mima i font size degli header per ogni breakpoint
+@mixin like-h($htag:h1){
+  @each $size, $headers in $header-styles {
+    @include breakpoint($size) {
+      @each $header, $val in $headers {
+        @if $header == $htag {
+          $font-size-temp: rem-calc(map-get($val, font-size));
+
+          font-size: $font-size-temp;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+    Definisce la proprietà con il valore del gutter di default in base alla mediaquery
+    è possibile dargli un opratore negativo
+*/
+@mixin gutter-as-property( $property: left, $valOperator: '', $divider: 2 ){
+  @each $query, $media-gutter in $grid-column-gutter {
+    @include breakpoint($query){
+      #{$property}: (#{$valOperator}$media-gutter/#{$divider});
+    }
+  }
+}
+
+/*
+    Definisce la proprietà dandogli il valore degli spazi verticali definiti dall'array $padding-y nelle variabili
+*/
+@mixin spacing-y( $property: padding-top, $valOperator: '', $divide : 1, $padding-map: $padding-y){
+  @each $query, $padding  in $padding-map {
+    @include breakpoint($query){
+      #{$property}: #{$valOperator}($padding/$divide);
+    }
+  }
+}
+
+@mixin spacing-half-y($property: false, $valOperator: null  ){
+  @include spacing-y($property, $valOperator, 2);
+}
+
+@mixin spacing-quart-y($property: false, $valOperator: null  ){
+  @include spacing-y($property, $valOperator, 4);
+}
+
+/*
+    Border around element with optional color parameter
+*/
+@mixin evo-debug($color: lighten($gray_light, 10%)){
+  border: thin solid $color;
+  min-height: 10px;
+}
+
+/*
+    Animation on button for ajax action
+*/
+@mixin evo-form-loading(){
+  .loader {
+    animation: loadingbar 3000ms infinite;
+  }
+
+  @keyframes loadingbar {
+    0% {
+      width: 0;
+    }
+
+    100%{
+      width: calc(100% - 5px);
+    }
+  }
+}
+
+
+/*
+    Accordion for second level items in mobile menu
+*/
+@mixin evo-menu-mobile-second-level-accordion(){
+  & > li > ul{
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    z-index: 1000;
+    max-height: 0;
+    transition: $transitions-default;
+
+    & > li {
+      background-color: darken($white, 5%);
+
+      & > a {
+        display: block;
+      }
+    }
+  }
+
+  /*
+        Accordion for second level menu
+    */
+  & > li.menu-item-has-children{
+    position: relative;
+
+    &.accordion-open{
+      & > ul{
+        max-height: 100px;
+      }
+
+      .mobile-menu-accordion-toggle{
+        i{
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  .mobile-menu-accordion-toggle{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+
+    @include evo-abs-vertical-center();
+
+    right: 20px;
+    padding: 0 !important;
+    z-index: 1000;
+    border: none;
+
+    i{
+      font-size: 20px;
+      transform: rotate(0deg);
+      transition: $transitions-default;
+    }
+  }
+}
+
+/*
+    Horizontal center block element using position absolute and translation
+*/
+@mixin evo-abs-horizontal-center(){
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*
+    Vertical center block element using position absolute and translation
+*/
+@mixin evo-abs-vertical-center(){
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*
+    Horizontal and Vertical center block element using position absolute and translation
+*/
+@mixin evo-abs-center(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+/*
+    Create a circle block element
+*/
+@mixin evo-circle($size: 20px){
+  display: block;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  line-height: $size - 2px;
+  padding: 0;
+  text-align: center;
+}
+
+/*
+    Animation: rotate element on hover
+*/
+@mixin evo-rotate-hover(){
+  transform: rotate(0deg);
+  transition: transform 300ms cubic-bezier(0.86, 0, 0.07, 1);
+
+  &:hover{
+    transform: rotate(90deg);
+  }
+}
+
+
+
+/*
+    Animation: icon with content slide up on hover (social icons on nicolaveneziani/evostudios)
+
+    Structure:  <container>
+                    <a>
+                        <i.normal></i>
+                        <i.hover></i>
+                    </a>
+                </container>
+
+    Apply-on:   <container>
+*/
+@mixin evo-icon-animation-slide-up($animation-time: 450ms){
+  overflow: hidden;
+
+  a{
+    position: relative;
+
+    i{
+      width: 100%;
+      transition: all $animation-time cubic-bezier(0.86, 0, 0.07, 1);
+
+      &.normal{
+        transform: translateY(0);
+      }
+
+      &.hover{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+      }
+    }
+  }
+
+  a:hover{
+    i.normal{
+      transform: translateY(-100%);
+    }
+
+    i.hover{
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+@mixin bg-cover($img_url: false){
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @if $img_url {
+        background-image: url($img_url);
+    }
+}
+
+
+
+@mixin menu-animated-line-hover($color: $gray){
+    position: relative;
+
+    @include breakpoint(large){
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 100%;
+            right: 1rem;
+            left: auto;
+            width: 0px;
+            height: 1px;
+            background: $color;
+            transition: $transitions-default-fast;
+        }
+
+        &:hover{
+            &:after{
+                left: 1rem;
+                right: auto;
+                width: calc(100% - 2rem);
+            }
+        }
+    }
+}
+
+
+
+@mixin object-fit(){
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

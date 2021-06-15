@@ -1,0 +1,62 @@
+/*
+    Mobile menu animation: stagger transition
+*/
+@include breakpoint(medium down){
+	#header-nav{
+		visibility: hidden;
+		opacity: 0;
+		transition: $transitions-default-linear;
+	}
+
+	#main-menu{
+		ul {
+			& > li{
+				opacity: 0;
+				transform: translateY(-30px);
+				transition: $transitions-default-out;
+			}
+
+			/*
+
+			*/
+			& > li:nth-child(1){
+				transition-delay: 50ms;
+			}
+			& > li:nth-child(2){
+				transition-delay: 100ms;
+			}
+			& > li:nth-child(3){
+				transition-delay: 150ms;
+			}
+			& > li:nth-child(4){
+				transition-delay: 200ms;
+			}
+			& > li:nth-child(5){
+				transition-delay: 250ms;
+			}
+			& > li:nth-child(6){
+				transition-delay: 300ms;
+			}
+			& > li:nth-child(7){
+				transition-delay: 350ms;
+			}
+			& > li:nth-child(8){
+				transition-delay: 400ms;
+			}
+		}
+	}
+
+	body.open-mobile-menu{
+		#header-nav{
+			visibility: visible;
+			opacity: 1;
+		}
+
+		#main-menu{
+			ul > li{
+				transform: translateY(0px);
+				opacity: 1;
+			}
+		}
+	}
+}

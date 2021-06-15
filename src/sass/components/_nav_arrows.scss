@@ -1,0 +1,77 @@
+/*
+    Dropdown/Accordion menu arrows:
+    - set foundation-settings $dropdownmenu-arrows to false
+    - and use our style
+*/
+%submenu-icon{
+    font-family: $font-icons;
+    content: "\f107";
+}
+
+// Arrows for desktop dropdown menu: only for first level
+.menu.dropdown{
+    & > li.is-dropdown-submenu-parent{
+        & > a{
+            &:after {
+                @extend %submenu-icon;
+                font-size: 10px;
+                right: 5px;
+                margin-top: -3px;
+            }
+        }
+    }
+}
+
+// Arrow for mobile accordion menu
+#main-menu {
+    @include breakpoint(medium down){
+		& > ul {
+            /* li - level 1 */
+
+            & > li {
+                position: relative;
+            }
+        }
+    }
+}
+
+.menu.accordion-menu{
+    .submenu-toggle {
+        /*
+            We cannot abs center it:
+            accordion height will change during open/close activity
+        */
+        position: absolute;
+        top: 4px;
+        right: 15px;
+
+        // To center position arrow
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transitions-default;
+
+        &::after {
+            @extend %submenu-icon;
+            font-size: 18px;
+            display: block;
+
+            // Override foundation style
+            width: auto;
+            height: auto;
+            border: none;
+        }
+
+        &[aria-expanded='true']{
+            transform: rotateX(180deg);
+
+            &::after{
+                transform: none;
+            }
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+}

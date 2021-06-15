@@ -1,0 +1,21 @@
+form.type-default {
+    label {
+        &.is-invalid-label {}
+    }
+    input,
+    textarea {
+        margin-bottom: 0px;
+    }
+    .form-error {
+        bottom: 6px;
+    }
+    #privacy-wrapper {
+        label {
+            transition: $transitions-default;
+            &.is-invalid-label {
+                transition: $transitions-default;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

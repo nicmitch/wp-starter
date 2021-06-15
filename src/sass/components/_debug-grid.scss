@@ -1,0 +1,17 @@
+
+body{
+    position: relative;
+}
+.debug-grid{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -1;
+
+    .column__inner{
+        height: 100vh;
+        border-left: thin solid $gray_light3;
+        border-right: thin solid $gray_light3;
+    }
+}

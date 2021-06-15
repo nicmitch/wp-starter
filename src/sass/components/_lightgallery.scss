@@ -1,0 +1,61 @@
+.lg-actions{
+  /*
+	.lg-next{
+		transition: $transitions-default;
+		&:hover{
+			transform: translateX(4px);
+			-webkit-transform: translateX(4px);
+		}
+	}
+
+	.lg-prev{
+		transition: $transitions-default;
+		&:hover{
+			transform: translateX(-4px);
+			-webkit-transform: translateX(-4px);
+		}
+	}
+	*/
+
+  .lg-next.disabled,
+  .lg-prev.disabled{
+    opacity: 0.1;
+  }
+}
+
+.lg-outer{
+  .lg-item{
+    background: url('#{$lg-path-images}/loading.gif') no-repeat scroll center center transparent;
+  }
+}
+
+.lg-sub-html{
+  background: rgba($black0, 0.5);
+  padding-bottom: 20px;
+  font-size: 14px;
+
+  @include breakpoint(medium){
+    padding-top: 20px;
+  }
+
+  .title{
+    text-transform: uppercase;
+  }
+}
+
+
+/*
+    Avoid image in lightbox to be 100% height
+*/
+.lg-outer .lg-image{
+    max-height: 85%;
+}
+
+
+
+/*
+	Prevent body scroll on lightgallery open
+*/
+body.lg-on {
+  overflow: hidden;
+}

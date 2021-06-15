@@ -1,0 +1,92 @@
+/*
+	2 diffent styles for the banner
+*/
+
+// @import 'cookies-wrapped';
+@import 'cookies-wrapped';
+
+/*
+	Common styles
+*/
+
+.ce-banner {
+    position: fixed;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include breakpoint(large) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    z-index: 99999;
+    font-size: $small-font-size;
+    p {
+        margin-bottom: 0;
+        a {
+            color: inherit;
+        }
+    }
+    .side--right {
+        @include breakpoint(large) {
+            text-align: center;
+        }
+    }
+    .ce-accept {
+        /*
+        @include button-filled();
+    */
+        background: $primary-color;
+        padding: 20px;
+        font-weight: none;
+        margin-bottom: 0;
+        font-size: rem-calc(12px);
+        color: $white;
+        text-decoration: none;
+        line-height: 1;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        @include breakpoint(large) {
+            width: auto;
+            margin-top: 0px;
+            font-size: rem-calc(14px);
+            padding: 20px 90px;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            background: lighten($primary-color, 10%);
+        }
+    }
+}
+
+.ce-iframe-placeholder {
+    background: rgba(#000, 0.05);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include flex-grid-row($size: expand);
+    @include flex-align(center, middle);
+    p {
+        @include flex-grid-column(12);
+    }
+    .ce-accept {
+        /*
+            @include button-filled();
+        */
+        background: $primary-color;
+        padding: 8px 15px;
+        margin-left: 20px;
+        font-weight: none;
+        margin-bottom: 0;
+        font-size: rem-calc(14px);
+        &:hover,
+        &:active,
+        &:focus {
+            background: lighten($primary-color, 10%);
+        }
+    }
+}

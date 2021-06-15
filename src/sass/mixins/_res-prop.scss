@@ -1,0 +1,37 @@
+
+@mixin res-prop($prop: "margin-bottom", $values: (small: 1rem), $factor: 1, $important: false, $roundValues: false) {
+  $_important: "";
+  @if ($important) {
+    $_important: "!important";
+  }
+  @if type-of($factor) == 'map' {
+    @each $breakpoint in map-keys($factor) {
+      $mediaFactor : map-get($factor, $breakpoint);
+      @include breakpoint($breakpoint) {
+        $value : map-get($values, $breakpoint) * $mediaFactor;
+        @if $roundValues == true {
+          $value : round($value);
+        }
+        @each $prop_single in $prop {
+          #{$prop_single}: $value #{$_important};
+        }
+      }
+    }
+  } @else {
+    @each $breakpoint in map-keys($values) {
+      @include breakpoint($breakpoint) {
+        $mediaFactor : $factor;
+        // @if type-of($factor) == 'map' {
+        //   $mediaFactor : map-get($factor, $breakpoint);
+        // }
+        $value : map-get($values, $breakpoint) * $mediaFactor;
+        @if $roundValues == true {
+          $value : round($value);
+        }
+        @each $prop_single in $prop {
+          #{$prop_single}: $value #{$_important};
+        }
+      }
+    }
+  }
+}

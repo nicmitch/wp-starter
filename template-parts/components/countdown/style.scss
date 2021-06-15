@@ -1,0 +1,44 @@
+
+.countdown {
+
+    @include breakpoint(small only) {
+        &__inner {
+                margin-left: -.45rem;
+                margin-right: -.45rem;
+        }
+
+        &__item {
+            padding-left: .45rem;
+            padding-right: .45rem;
+        }
+    }
+    
+    &--big {
+        color: $brand;
+
+        .countdown__item {
+            text-align: center;
+        }
+
+        .countdown__output {
+            font-size: rem-calc(40);
+            font-weight: bold;
+            text-align: center;
+            line-height: 1em;
+            min-width: 60px;
+            display: block;
+
+            @include breakpoint(medium) {
+                font-size: rem-calc(73);
+                min-width: 110px;
+            }
+        }
+
+        .countdown__description {
+            text-transform: uppercase;
+            font-size: rem-calc(12);
+            font-weight: bold;
+            letter-spacing: .1rem;
+        }
+    }
+}

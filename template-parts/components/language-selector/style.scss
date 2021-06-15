@@ -1,0 +1,22 @@
+
+.language-selector {
+    
+    a {
+        color: inherit;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &.current {
+            display: none !important;
+        }
+    }
+
+    @include breakpoint(small only) {
+
+        a {
+            font-size: rem-calc(14);
+        }
+    }
+}

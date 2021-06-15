@@ -1,0 +1,67 @@
+
+@mixin block-map-common() {
+  .map-cont {
+    height: auto;
+    width: 100%;
+    padding-bottom: 70%;
+    position: relative;
+
+    @include breakpoint(medium) {
+      padding-bottom: 50%;
+    }
+
+    @include breakpoint(large) {
+      padding-bottom: 40%;
+    }
+
+    @include breakpoint(xxlarge) {
+      padding-bottom: 0;
+      height: 500px;
+    }
+  }
+}
+
+@mixin block-google-maps() {
+  @include block-map-common();
+
+  .map-cont {
+    @include breakpoint(medium) {
+      //height: 400px;
+    }
+
+    @include breakpoint(large) {
+      //height: 550px;
+    }
+  }
+
+  .gm-style-iw {
+    div {
+      div {
+        overflow: hidden !important;
+      }
+    }
+  }
+}
+
+@mixin block-map-embed() {
+  @include block-map-common();
+
+  .map-cont {
+    @include flex-grid-column();
+  }
+
+  &.section-wrap--boxed {
+    .map-cont {
+      @include gutter-as-property(margin-left);
+      @include gutter-as-property(margin-right);
+    }
+  }
+}
+
+.block-google-maps {
+  @include block-google-maps();
+}
+
+.block-map-embed {
+  @include block-map-embed();
+}

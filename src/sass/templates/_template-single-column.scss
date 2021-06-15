@@ -1,0 +1,9 @@
+/*
+	Template single column layout
+*/
+body.template-single-column {
+  #main-content {
+    @include section-spacer(margin-top, 1);
+    @include section-spacer(margin-bottom, 1);
+  }
+}

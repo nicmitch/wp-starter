@@ -1,0 +1,28 @@
+
+.hero-split {
+
+    .column {
+
+        &,
+        > .row {
+            min-height: 100%;
+        }
+    }
+
+    &__img {
+        position: relative;
+        padding-bottom: 90%;
+        min-height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &__text {
+        padding: 80px;
+    }
+
+    h1, h2, h3, h4, h5 {
+        max-width: 650px;
+    }
+}

@@ -1,0 +1,16 @@
+
+@function j-rem-calc($size) {
+  $remSize: $size / 16;
+
+  @return $remSize;
+}
+
+// Custom functions to convert px in vw
+@function px2vw($width, $viewport) {
+  @return $width / $viewport * 100vw;
+}
+
+// Custom functions to convert px in vw and px
+@function px2vw2px($width, $viewport-from, $viewport-to) {
+  @return $width / $viewport-from * $viewport-to;
+}

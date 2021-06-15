@@ -1,0 +1,11 @@
+
+.dropdown {
+    &--simple {
+        .submenu {
+            padding: 0 0px 0 15px;
+            background-color: $body-background;
+            border: 0;
+            min-width: none;
+        }
+    }
+}

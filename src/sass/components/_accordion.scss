@@ -1,0 +1,33 @@
+
+.accordion {
+
+  .accordion-item {
+
+    i {
+      color: $medium-gray;
+      margin-left: 10px;
+    }
+
+    &:not(.is-active) {
+      .icon--close {
+        display: none;
+      }
+    }
+
+    &.is-active {
+      .icon--open {
+        display: none;
+      }
+    }
+  }
+
+  .accordion-title {
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 1.4em;
+  }
+
+  .accordion-content {
+    font-size: rem-calc(14);
+  }
+}

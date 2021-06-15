@@ -1,0 +1,133 @@
+#header-nav{
+    @include breakpoint(medium down){
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+
+        /*
+            To have a scrollable menu with overflow you must not have e vertical centered menu
+        */
+        // @include flex-align(center, middle);
+        overflow-y: scroll;
+
+        top: 112px; /* #header total height */
+        padding-top: 0px;
+    }
+
+    @include breakpoint(medium only){
+        top: 122px;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#main-menu {
+    @include breakpoint(medium down){
+		width: 100%;
+
+		a {
+			width: 100%;
+			display: block;
+	    	padding: 15px;
+		}
+
+		:not(.is-active) > a{
+			color: $body-font-color;
+		}
+
+		& > ul {
+			list-style-type: none;
+			width: 100%;
+
+            /* li - level 1 */
+			& > li {
+				width: 100%;
+
+                /* ul - level 2*/
+    			& > ul{
+    				background: $gray_light3;
+    				padding: 0px;
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                    padding-bottom: 8px;
+                    padding-top: 6px;
+
+    				/* li - level 2 */
+    				& > li{
+
+    					& > a{
+                            padding-left: 24px;
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+
+    					}
+
+    					/* ul - level 3 */
+    					& > ul{
+    						display: block !important;
+                            margin: 0px;
+                            background: $gray_light;
+    					}
+    				}
+    			}
+
+                /*
+                    Fake mega menus (3 levels)
+                */
+                &.mm{
+                    /* ul level 2*/
+                    & > ul{
+                        padding-bottom: 0px;
+                        padding-top: 0px;
+
+                        & > li{
+
+                            & > a{
+                                font-size: 11px;
+                                text-transform: uppercase;
+                            }
+
+                            & > .submenu-toggle{
+                                display: none;
+                            }
+
+
+                            /* ul - level 3 */
+                            & > ul{
+                                padding-top: 6px;
+                                padding-bottom: 12px;
+                                & > li{
+                                    & > a{
+                                        padding-left: 24px;
+                                        padding-top: 6px;
+                                        padding-bottom: 6px;
+                                    }
+                                }
+                                & > li:last-child{
+                                    & > a{
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+		}
+    }
+}
+
+
+
+// Avoid body scroll when mobile menu is open
+body.open-mobile-menu {
+    @include breakpoint(medium down){
+        overflow: hidden;
+    }
+}

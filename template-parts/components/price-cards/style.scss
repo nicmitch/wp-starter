@@ -1,0 +1,108 @@
+
+.price-cards {
+    overflow: visible;
+    max-width: rem-calc(300px);
+    margin-left: auto;
+    margin-right: auto;
+    @include gutter-as-property(padding-left);
+    @include gutter-as-property(padding-right);
+
+    &__item {
+        position: relative;
+        background-color: $black;
+        color: #FFF;
+        font-weight: 500;
+        font-size: rem-calc(14);
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        @include responsive-property(margin-top, $padding-y, .5);
+        @include gutter-as-property(padding);
+
+        small {
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+    }
+
+    h3 {
+        font-weight: 400;
+    }
+
+    &__price {
+        font-weight: 700;
+        font-size: rem-calc(25);
+        margin-top: 120px;
+
+        @include breakpoint(medium) {
+            margin-top: 140px;
+            font-size: rem-calc(35);
+        }
+
+        span {
+            font-size: rem-calc(20);
+        }
+    }
+
+    .button {
+        display: block;
+        margin-top: 20px;
+        min-width: 0px;
+    }
+
+    &__label {
+        position: absolute;
+        top: -35px;
+        right: -35px;
+        letter-spacing: 0.1em;
+        font-size: rem-calc(9);
+        color: #FFF;
+        text-transform: uppercase;
+        font-weight: 700;
+        width: 70px;
+        height: 70px;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            transform: translate(-50%, -50%) rotate(0deg);
+            animation: rotate 10s linear infinite;
+        }
+    }
+
+    &__label-text {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        right: 5px;
+        transform: translate(0%, -50%);
+        z-index: 2;
+        text-align: center;
+    }
+
+    @include breakpoint(medium) {
+        max-width: $global-width;
+
+        &__label {
+            font-size: rem-calc(10);
+            top: -40px;
+            right: -40px;
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

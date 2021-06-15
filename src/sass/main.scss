@@ -1,0 +1,115 @@
+/*
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+*/
+
+//
+// Vendors/settings
+//
+@import 'functions/utils';
+@import 'functions/cubic-bezier';
+@import 'variables';
+@import 'mixins/basic';
+// @import 'mixins/font-face';
+// Responsive Font Sizes with RFS package (to be installed)
+// @import "rfs/scss";
+// @import 'mixins/res-prop';
+// Include foundation
+// @import "./vendors/foundation/foundation";
+@import 'vendors/foundation/foundation-settings';
+@import "foundation-sites/scss/foundation";
+@import 'vendors/foundation/foundation-includes';
+@import 'swiper/css/swiper';
+
+/*
+    Base
+*/
+// @import './base/columns';
+@import './base/utilities';
+@import './base/basic_elements';
+@import './base/typography';
+@import './base/commons';
+
+@import '../../template-parts/components/**/style.scss';
+@import '../../template-parts/blocks/**/style.scss';
+
+/*
+    Components: focused on widgets, it contains all kind of specific modules like a slider...
+*/
+
+@import 'components/forms';
+//@import 'components/forms-newsletter';
+//@import 'components/forms-type-placeholder';
+//@import 'components/forms-type-default';
+//@import 'components/forms-type-placeholder-material';
+//@import 'components/nav_base';
+//@import 'components/nav_arrows';
+//@import 'components/nav_desktop_dropdown_base';
+//@import 'components/nav_desktop_mega_menus';
+@import 'components/nav_mobile_toggle';
+//@import 'components/nav_mobile_style_fixed';
+//@import 'components/nav_mobile_animation';
+//@import 'components/lightgallery';
+//@import 'components/scroll-to-top';
+//@import 'components/socials';
+//@import 'components/swiper';
+@import 'components/buttons';
+@import 'components/dropdown';
+//@import 'components/breadcrumb';
+@import 'components/accordion';
+//@import 'components/gmap';
+//@import 'components/reveal';
+//@import 'components/credits-reveal';
+//@import 'components/debug-grid';
+@import 'components/callouts';
+//@import 'components/sticky_sidebar';
+// @import 'components/max-mega-menu';
+// @import 'components/sticky_header';
+// @import 'components/badge';
+// @import 'components/forms-select';
+// @import 'components/box';
+// @import 'components/loader';
+// @import 'components/language-switch';
+
+/*
+    Vendors dipendenti da mixini o altri components
+*/
+
+@import 'vendors/cookies/cookies';
+@import 'vendors/woocommerce/_woocommerce';
+
+/*
+    Blocks
+*/
+
+//@import 'blocks/blocks';
+
+/*
+    Layout: templates
+*/
+
+
+/*
+@import './templates/template-single-column';
+@import './templates/template-sidebar-left';
+@import './templates/template-sidebar-right';
+*/
+
+
+/*
+    Layout: everything that takes part in laying out the site or application.
+*/
+@import 'layout/header';
+@import 'layout/menu';
+@import 'layout/main';
+@import 'layout/footer';
+
+/*
+    Pages: page-specific styles
+*/
+@import 'pages/home';
+//@import 'pages/contatti';
+//@import 'pages/page-template-default';
+//@import 'pages/404';

@@ -1,0 +1,21 @@
+
+@mixin block-text-gallery() {
+  @include block-columns();
+
+  // Rimuovo i margin bottom della seconda colonna
+  .column--2,
+  .gallery {
+    padding-bottom: 0;
+  }
+
+  // Resetto il max width per la colonna della gallery
+  .column--2 {
+    .column__inner {
+      max-width: 1000px;
+    }
+  }
+}
+
+.block-text-gallery {
+  @include block-text-gallery();
+}

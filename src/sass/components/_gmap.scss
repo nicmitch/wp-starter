@@ -1,0 +1,26 @@
+
+.gmap {
+  width: 100%;
+  height: 80vh;
+  @include breakpoint(large){
+      min-height: 500px;
+  }
+
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+}
+
+.gm-style-iw {
+  div {
+    div {
+      overflow: hidden !important;
+    }
+  }
+}

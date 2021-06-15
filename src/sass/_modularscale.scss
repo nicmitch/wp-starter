@@ -1,0 +1,21 @@
+/*
+    Modularscale
+*/
+$modularscale: (
+  base: 16px,
+  320px: (
+    ratio: 40at32,
+  ),
+  map-get($breakpoints, small): (
+    ratio: 100at32,
+  ),
+  map-get($breakpoints, medium): (
+    ratio: 100at32,
+  ),
+  map-get($breakpoints, large): (
+    ratio: 130at32,
+  ),
+  map-get($breakpoints, xxlarge): (
+    ratio: 150at32,
+  )
+);

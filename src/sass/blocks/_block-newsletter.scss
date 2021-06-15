@@ -1,0 +1,41 @@
+.block-newsletter{
+    .block__title{
+        font-family: $font2;
+        font-weight: 700;
+        font-size: 36px;
+    }
+
+    .block__text{
+        margin-top: 10px;
+    }
+
+    .message_area{
+        @include callout();
+        margin-bottom: 30px;
+
+        button{
+            margin-right: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            color: $black;
+        }
+    }
+
+    .block__form{
+        margin-top: 30px;
+
+        [type=checkbox]{
+            margin-right: 5px;
+        }
+
+        .privacy{
+            margin-top: 15px;
+        }
+    }
+
+    .button{
+        @include breakpoint(large){
+            margin-left: 10px;
+        }
+    }
+}

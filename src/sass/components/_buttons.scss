@@ -1,0 +1,34 @@
+/*
+    Basic filled button
+*/
+@mixin button-filled(){
+}
+
+@mixin buttons-common() {
+    outline: none;
+    text-decoration: none;
+    position: relative;
+
+    &:not(.small):not(.no-min-w) {
+        min-width: 200px;
+
+        @include breakpoint(medium) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+
+    &.quad {
+        min-width: 50px;
+    }
+}
+
+// Standard button
+.btn,
+.button {
+    @include buttons-common;
+
+    &.small {
+        font-size: map-get($button-sizes, 'small');
+    }
+}

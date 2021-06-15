@@ -1,0 +1,91 @@
+/*
+    Block Hero:
+        - Height (per breakpoint)
+        - flexbox/absolute positioned content (you can choose, see below)
+        - image as cover background
+        - overlay on background
+*/
+.block-hero{
+    position: relative;
+    @include bg-cover();
+
+    /*
+        Vertical center with flexbox
+        comment out following lines to handle slide content with absolute positioning
+        (see below)
+    */
+    display: flex;
+    align-items: center;
+
+    /*
+        Slide content style
+    */
+    .block-hero__content-wrapper{
+        /*
+            don't want vertical center with flexbox?
+            uncomment following lines
+        */
+        /*
+        position: absolute;
+        top: 15%;
+        left: 0px;
+        */
+
+        width: 100%;
+        z-index: 200;
+        box-sizing: border-box;
+
+        @include breakpoint(medium only){
+            top: 45%;
+        }
+    }
+
+    .block-hero__content{
+        color: $white;
+    }
+
+    .block-hero__title{
+        margin-top: 5px;
+        font-family: $font2;
+        font-weight: $global-weight-bold;
+        letter-spacing: -1px;
+        line-height: 1;
+        text-shadow: 0 0 10px $black0;
+        /* text-transform: uppercase; */
+    }
+
+    .block-hero__text{
+        margin-top: rem-calc(10);
+        margin-bottom: rem-calc(10);
+        text-shadow: 0 0 10px $black0;
+
+        @include breakpoint(medium){
+            margin-top: rem-calc(20);
+            margin-bottom: rem-calc(20);
+        }
+    }
+
+    .block-hero__button{
+        margin-top: rem-calc(15);
+
+        @include breakpoint(large){
+            margin-top: rem-calc(20);
+        }
+    }
+}
+
+.block-hero--h-default{
+    height: 65vh;
+
+    @include breakpoint(large){
+        min-height: 500px;
+    }
+
+    @include breakpoint(xlarge){
+        min-height: 600px;
+    }
+}
+
+.block-hero--h-small{
+    min-height: 35vh;
+}

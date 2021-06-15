@@ -1,0 +1,18 @@
+.block-title-text{
+    .block__title{
+        margin-bottom: 15px;
+        @include breakpoint(large){
+            margin-bottom: 0px;
+        }
+
+        a{
+            color: $text-color;
+        }
+    }
+
+    .block__text{
+        .button{
+            margin-top: 15px;
+        }
+    }
+}

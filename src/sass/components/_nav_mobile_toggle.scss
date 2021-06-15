@@ -1,0 +1,119 @@
+// Mobile menu toggle
+
+.mobile-menu-toggle {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.mobile-menu-toggle__ham {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin: 0px;
+
+    svg {
+        position: absolute;
+        margin: 0;
+        left: 0;
+
+        path {
+            stroke-width: 2px;
+        }
+
+        &:first-of-type {
+            top: 1px;
+        }
+
+        &:nth-child(2) {
+            top: 12px;
+        }
+
+        &:nth-child(3) {
+            bottom: 2px;
+        }
+    }
+}
+
+
+/*.mobile-menu-toggle__label {
+    font-size: rem-calc(12);
+    text-transform: uppercase;
+    color: $brand;
+    font-weight: 400;
+    // @include evo-debug(green);
+    div {
+        display: none;
+        color: $brand;
+        &.label--menu {
+            display: block;
+        }
+    }
+}*/
+
+// Mobile menu animation: on toggle and menu
+.open-mobile-menu {
+    .mobile-menu-toggle {
+        .mobile-menu-toggle__ham {
+            div {
+                background-color: $text-color;
+            }
+            .first {
+                transform: rotate(45deg);
+                top: 8px;
+            }
+            .second {
+                opacity: 0;
+            }
+            .third {
+                transform: rotate(-45deg);
+                top: 8px;
+            }
+        }
+    }
+    .mobile-menu-toggle__label {
+        div {
+            color: $text-color;
+            &.label--menu {
+                display: none;
+            }
+            &.label--close {
+                display: block;
+            }
+        }
+    }
+    #header-top {
+        a,
+        i {
+            color: $text-color;
+        }
+    }
+    /*
+		Change logo on mobile menu open
+	*/
+    #header-logo-img-mobile-menu-open {
+        opacity: 1;
+        visibility: visible;
+    }
+    #header-logo-img {
+        opacity: 0;
+        visibility: hidden;
+    }
+    /*
+		Hide header-top on mobile menu open
+	*/
+    /*
+	#header-top{
+		position: static;
+		opacity: 0;
+		visibility: hidden;
+	}
+	*/
+}

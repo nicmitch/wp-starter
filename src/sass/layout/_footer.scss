@@ -1,0 +1,65 @@
+.footer__top,
+.footer__bottom {
+    font-size: rem-calc(14);
+    border-top: 1px solid $border-color;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+
+        @include breakpoint(medium down) {
+            margin-bottom: 10px;
+        }
+    }
+
+    a {
+        display: inline-block;
+    }
+
+    a:hover,
+    a:active,
+    li.active a {
+        &,
+        i {
+            color: $primary-color;
+        }
+    }
+}
+
+.footer__top {
+    
+    a {
+        color: inherit;
+    }
+
+    .menu.horizontal {
+        a {
+            padding-left: 0;
+            display: inline-block;
+        }
+    }
+}
+
+.footer__bottom {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 30px;
+
+    &,
+    a,
+    p {
+        color: $body-font-color;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.footer-bottom-item {
+    @include breakpoint(medium) {
+        display: inline-block;
+    }
+}

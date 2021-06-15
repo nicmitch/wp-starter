@@ -1,0 +1,9 @@
+.sticky-sidebar .sidebar {
+    will-change: min-height;
+}
+
+.sticky-sidebar .sidebar__inner {
+    will-change: position, transform;
+}
+
+//If you use outside johnny it's possibile you have flickering problems. Add mb and pb to all containers to solve.

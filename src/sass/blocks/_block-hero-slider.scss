@@ -1,0 +1,103 @@
+/*
+    Block Hero Slider:
+        - Fixed height (per breakpoint)
+        - flexbox/absolute positioned content
+        - image as cover background
+        - overlay on background
+*/
+.block-hero-slider{
+    position: relative;
+
+    .slide{
+        height: 65vh;
+        position: relative;
+        @include bg-cover();
+
+        /*
+            Vertical center with flexbox
+            comment out following lines to handle slide content with absolute positioning
+            (see below)
+        */
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(medium){
+            /* height: 80vh; */
+        }
+
+        @include breakpoint(large){
+            min-height: 500px;
+        }
+
+        @include breakpoint(xlarge){
+            min-height: 650px;
+        }
+
+        /*
+        @include breakpoint(xxlarge) {
+        min-height: 450px;
+        }
+
+        @include breakpoint(xxxlarge) {
+        min-height: 550px;
+        }
+        */
+    }
+
+
+    /*
+        Slide content style
+    */
+    .slide__content__wrapper{
+        /*
+            don't want vertical center with flexbox?
+            uncomment following lines
+        */
+        /*
+        position: absolute;
+        top: 15%;
+        left: 0px;
+        */
+
+        width: 100%;
+        z-index: 100000;
+        box-sizing: border-box;
+
+        @include breakpoint(medium only){
+            top: 45%;
+        }
+    }
+
+    .slide__content{
+        color: $white;
+    }
+
+    .slide__title{
+        font-family: $font2;
+        /* font-weight: 900; */
+        font-weight: $global-weight-bold;
+        letter-spacing: -1px;
+        text-shadow: 0 0 10px $black0;
+        /* text-transform: uppercase; */
+        margin-top: 5px;
+        line-height: 1;
+    }
+
+    .slide__text{
+        margin-top: rem-calc(10);
+        margin-bottom: rem-calc(10);
+        text-shadow: 0 0 10px $black0;
+
+        @include breakpoint(medium){
+            margin-top: rem-calc(20);
+        }
+    }
+
+    .slide__button{
+        margin-top: rem-calc(15);
+
+        @include breakpoint(medium){
+            margin-top: rem-calc(20);
+        }
+    }
+}

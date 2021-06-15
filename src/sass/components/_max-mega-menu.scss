@@ -1,0 +1,118 @@
+#mega-menu-wrap-main_menu{
+    background: transparent;
+
+    & #mega-menu-main_menu {
+        & > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link,
+        & > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link,
+        & > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link{
+            background: transparent;
+            font-weight: 700;
+        }
+
+        & > li.mega-menu-item > a.mega-menu-link{
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1;
+            height: auto;
+            padding: 15px;
+            @include breakpoint(large){
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-right: 30px;
+            }
+
+            @include breakpoint(medium){
+                font-size: 22px;
+            }
+            @include breakpoint(large){
+                font-size: 14px;
+            }
+
+            & > span.mega-indicator{
+                margin-right: 12px;
+                @include breakpoint(large){
+                    margin-right: 0px;
+                    position: absolute;
+                    &:after{
+                        margin: 0px;
+                    }
+                }
+            }
+
+            &:hover{
+                background: transparent;
+                font-weight: 700;
+                border: none;
+                // color: $brand;
+            }
+        }
+
+        & > li.mega-menu-item{
+            &:first-child{
+                & > a{
+                    @include breakpoint(large){
+                        padding-left: 0px;
+                    }
+                }
+            }
+
+            &:last-child{
+                & > a{
+                    @include breakpoint(large){
+                        padding-right: 0px;
+                    }
+                }
+            }
+        }
+
+        & > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item{
+            padding-top: 0px;
+            padding-bottom: 15px;
+
+            @include breakpoint(large){
+                padding-bottom: 0px;
+            }
+        }
+
+        /*
+            Second level menu style
+        */
+        & > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link{
+            font-weight: 700;
+            text-transform: none;
+        }
+
+
+        /*
+            Third level menu style
+        */
+        & > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link{
+            font-weight: 300;
+        }
+
+        & > li.mega-menu-item.mega-toggle-on > a.mega-menu-link{
+            background: transparent !important;
+            font-weight: 700;
+        }
+    }
+}
+
+
+/*
+    Transition
+*/
+.mega-sub-menu{
+    transition-timing-function: linear !important;
+    transition-duration: $transitions-default-time-small !important;
+}
+
+
+/*
+    Layout first submenu on 2 columns
+*/
+.mega-menu-item-61 .mega-sub-menu{
+    @include breakpoint(large){
+        column-count: 2;
+    }
+}

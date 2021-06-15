@@ -1,0 +1,95 @@
+/*
+    Globals / General
+*/
+
+$contrast-warnings: false;
+$global-width-px: 1200;
+$max-column-width: #{$global-width-px / 12}px;
+// Grid column width
+$gc-width: #{(j-rem-calc($global-width-px)) /12}rem;
+$jw-path-fonts: '../fonts/';
+$jw-path-images: '../images/';
+
+/*
+    Colors
+*/
+
+// Base colors
+$black: #191919; //
+$black0: #000; //
+$white: #FFF; //
+$brand: #A3855B; //
+$text-color: $black;
+
+//$gray-light: #e9e3dd; //
+$gray-light: #faf6f2;
+$gray: #dbd6d1; //
+$gray-dark: #969696;
+
+$gray-darken: darken(#e9e3dd, 10%); //
+
+$border-color: $black;
+
+/*
+    Fonts: families
+*/
+
+
+/* $font1: 'IBM Plex Sans', sans-serif; */
+$font1: 'Poppins', sans-serif;
+$font2: 'Poppins', sans-serif;
+
+/*
+    Responsive Font Sizes with RFS package (to be installed)
+*/
+
+
+/*
+$rfs-base-value: 11px; // Pre title font-size
+$rfs-breakpoint: 1200px; // according with max breakpoint in project
+$rfs-rem-value: 16; // according to $global-font-size in foundation-settings
+*/
+
+
+/*
+    Spaces maps
+*/
+$padding-y: (small: 30px, medium: 45px, large: 60px, xlarge: 90px);
+$section-spacing: (small: 80px, medium: 90px, large: 120px, xlarge: 140px);
+$body-spacing: ( small: 10px, medium: 20px, large: 20px, xlarge: 20px, xxlarge: 20px);
+$padding-elements: ( small: 15px, large: 30px);
+
+/*
+    Transitions
+*/
+
+// Easings
+$transitions-easing-easeInOutQuart: cubic-bezier('easeInOutQuart');
+$transitions-easing-easeInOutQuint: cubic-bezier('easeInOutQuint');
+$transitions-default-easing-out: cubic-bezier('easeOutQuart');
+$transitions-default-easing: $transitions-easing-easeInOutQuart;
+// Timings
+$transitions-default-time: 400ms;
+$transitions-default-time-small: 250ms;
+$transitions-default-time-long: 800ms;
+// Defaults
+$transitions-default: all $transitions-default-time $transitions-default-easing;
+$transitions-default-fast: all $transitions-default-time-small $transitions-default-easing;
+$transitions-default-out: all $transitions-default-time-long $transitions-default-easing-out;
+$transitions-default-linear: all $transitions-default-time-small linear;
+$transitions-default-linear-slow: all $transitions-default-time-long linear;
+$header-nav-anim: $transitions-default;
+
+/*
+    Utils
+*/
+
+$nav-main-desktop-query: large;
+$nav-main-mobile-query: medium;
+$nav-main-color: $text-color;
+$nav-main-sticky: false;
+$zi-header: 1000;
+$zi-header-menu: 20000;
+$zi-header-elements: 20010;
+$header-bg: $white;
+$menu-bg--mobile: #FFF;

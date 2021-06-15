@@ -1,0 +1,198 @@
+/*
+    Mega Menus
+    from WordPress menu admin:
+    1) add class "mm" to "li" menu item
+    2) add one of the followings classes:
+        - "mm--2cols2" for 2 columns
+        - "mm--3cols" for 3 columns
+        - "mm--full-menu" for menu width as menu
+        - "mm--full-boxed" for menu width as row
+*/
+
+
+
+/*
+    Mega menu base style
+*/
+#menu-main-menu{
+    /*
+        level 1: li
+    */
+    & > .is-dropdown-submenu-parent{
+        /*
+            Global style for ".mm" menu items
+        */
+        &.mm{
+
+            & > a{
+                position: relative;
+            }
+
+            /*
+                level 2: ul
+                flex for columns layout
+            */
+            & > .submenu.is-dropdown-submenu{
+                display: flex !important;
+
+
+                /* level 2: li */
+                & > .is-dropdown-submenu-parent{
+
+                    /*
+                        level 2: a
+                        usually we want to hide this or show with small/different font
+                    */
+                    & > a{
+                        font-size: 12px;
+                        opacity: 0.5;
+                    }
+
+                    /* level 3: ul */
+                    & > .submenu.is-dropdown-submenu{
+                        display: block;
+                        position: static;
+                        width: 100%;
+                        min-width: 0px;
+
+                        /* level 3: li */
+                        & > .is-dropdown-submenu-item{
+
+                            /* level 3: a (actual clickable links) */
+                            & > a{
+                                display: block;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*
+                Mega menu as last item?
+                Reposition it
+            */
+            &:last-child{
+                & > .submenu.is-dropdown-submenu{
+                    left: auto;
+                    right: 0px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*
+    Mega Menu with 2 columns: classes "mm" and "mm2" on top li menu element
+*/
+#menu-main-menu{
+    & > .is-dropdown-submenu-parent.mm--2cols{
+        & > .submenu.is-dropdown-submenu{
+
+            /*
+                ul - level 2
+            */
+            width: 300px;
+
+            @include breakpoint(xlarge){
+                width: 350px;
+            }
+
+            @include breakpoint(xxlarge){
+                width: 400px;
+            }
+
+            /*
+                2 columns
+            */
+            & > li{
+                width: 50%;
+            }
+        }
+    }
+}
+
+
+
+/*
+    Mega Menu with 3 columns: classes "mm" and "mm3" on top li menu element
+*/
+#menu-main-menu{
+    & > .is-dropdown-submenu-parent.mm--3cols{
+        & > .submenu.is-dropdown-submenu{
+            width: 400px;
+
+            @include breakpoint(xlarge){
+                width: 450px;
+            }
+
+            @include breakpoint(xxlarge){
+                width: 500px;
+            }
+
+            /*
+                3 columns
+            */
+            & > .is-dropdown-submenu-parent{
+                width: 33%;
+            }
+        }
+    }
+}
+
+
+
+/*
+    Mega Menu Full Boxed: classes "mm" and "mm--full-menu" on top li menu element
+*/
+#menu-main-menu{
+    & > .is-dropdown-submenu-parent.mm--full-menu{
+        position: static;
+
+        & > .submenu.is-dropdown-submenu{
+            width: 100%;
+
+            & > .is-dropdown-submenu-parent{
+                width: 25%;
+            }
+        }
+    }
+}
+
+
+
+/*
+    Mega Menu full boxed: classes "mm" and "mm--full-boxed" on top li menu element
+
+    Pay attention: uncomment only if/when needed,
+    because mm--full-menu and mm--full-boxed are mutually esclusive
+*/
+/*
+#header-main{
+    & > .row{
+        position: relative;
+    }
+}
+
+#menu-main-menu{
+    position: static;
+
+    & > .is-dropdown-submenu-parent.mm--full-boxed{
+        position: static;
+
+        & > .is-dropdown-submenu{
+            top: calc(100% + 15px);
+        }
+
+        & > .submenu.is-dropdown-submenu{
+            width: 100%;
+
+            & > .is-dropdown-submenu-parent{
+                width: 25%;
+            }
+        }
+    }
+}
+*/

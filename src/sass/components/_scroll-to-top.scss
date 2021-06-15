@@ -1,0 +1,42 @@
+#scroll-to-top{
+  @include show-for(large);
+
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  line-height: 1;
+  border-radius: $global-radius;
+  background: $brand;
+  cursor: pointer;
+  transition: $transitions-default;
+  text-align: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+
+  &.show{
+    bottom: 20px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover{
+    background: lighten($brand, 5%);
+
+    i{
+      transform: translateY(-3px);
+      -webkit-transform: translateY(-3px);
+    }
+
+  }
+
+  i{
+    transition: $transitions-default;
+    color: $white;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+}

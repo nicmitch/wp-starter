@@ -1,0 +1,9 @@
+
+.cosa-troverai {
+
+    @include breakpoint(medium) {
+        ul {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+
+.how-it-works {
+    background-color: $black;
+    color: #FFF;
+
+    &__icon {
+        height: 70px;
+        width: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        background-color: $black;
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    p {
+        max-width: 245px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__items {
+        position: relative;
+
+        .column {
+            position: relative;
+            background-color: $black;
+            z-index: 2;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: linear-gradient($white 33%, rgba($white, 0) 0%);
+            background-position: right;
+            background-size: 1px 20px;
+            background-repeat: repeat-y;
+            left: 50%;
+            top: 10%;
+            bottom: 10%;
+            width: 1px;
+        }
+
+        @include breakpoint(medium) {
+
+            .column {
+                background-color: transparent;
+                z-index: 0;
+            }
+
+            &:before {
+                background-image: linear-gradient(to right, $white 33%, rgba($white, 0) 0%);
+                background-position: bottom;
+                background-size: 30px 1px;
+                background-repeat: repeat-x;
+                left: 15%;
+                right: 15%;
+                top: 70px;
+                width: auto;
+                height: 1px;
+            }
+        }
+    }
+}

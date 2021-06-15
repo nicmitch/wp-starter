@@ -1,0 +1,308 @@
+.block-text-image-v2 {
+    @include responsive-property(padding-top, $padding-y);
+
+  @include breakpoint(large){
+          padding-top: 0px;
+        display: grid;
+        grid-template-columns: 0 repeat(12, 1fr) 0;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        /*
+            Fixed height?
+            set on image div
+        */
+        /*
+        .block__image{
+            @include breakpoint(xlarge){
+                height: 400px;
+            }
+
+            @include breakpoint(xxlarge){
+                height: 900px;
+            }
+
+            img{
+                @include object-fit();
+            }
+        }
+        */
+
+
+        .block__content{
+            // Use flexbox to set vertical alignment/position
+            display: flex;
+
+            /* use one of the followings */
+            align-items: center;
+
+            /*
+            align-items: flex-end;
+            padding-bottom: 5vw;
+            */
+        }
+
+        .block__content__inner{
+            @include responsive-property(padding-top, $padding-elements);
+            @include responsive-property(padding-bottom, $padding-elements);
+        }
+
+
+        .block__image{
+            // Use flexbox to set vertical alignment/position
+            display: flex;
+
+            /* use one of the followings */
+            align-items: center;
+
+            /*
+            align-items: flex-end;
+            padding-bottom: 5vw;
+            */
+        }
+
+
+
+
+
+        /*
+            Block content is always sticky to fixed-grid
+        */
+        &.image-position--right{
+            .block__content{
+                grid-column-start: 2;
+                grid-column-end: 8;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .block__content__inner{
+                padding-right: 45px; // this kind of block requires additional padding in addition to standard .columnm padding
+            }
+        }
+
+        &.image-position--left{
+            .block__content{
+                grid-column-start: 8;
+                grid-column-end: 14;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+
+            .block__content__inner{
+                padding-left: 45px; // this kind of block requires additional padding in addition to standard .columnm padding
+            }
+        }
+
+
+        /*
+            Handle different types of image layouts:
+            - fill
+            - overflow
+            - full
+        */
+        &.image-layout--fillwidth{
+
+            .block__image__inner{
+                width: 100%;
+            }
+
+            img{
+                max-width: none;
+                width: 100%;
+            }
+
+            &.image-position--right{
+                .block__image{
+                    grid-column-start: 8;
+                    grid-column-end: 15;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                    /*
+                    padding-left: 10px;
+                    */
+                }
+            }
+
+            &.image-position--left{
+                .block__image{
+                    grid-column-start: 1;
+                    grid-column-end: 8;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                    /*
+                    padding-right: 15px;
+                    */
+                }
+            }
+        }
+
+        /*
+            Section height: content + vertical padding
+        */
+        &.image-layout--overflow{
+            overflow: hidden;
+
+            .block__content__inner{
+                @include responsive-property(padding-top, $padding-y, 2);
+                @include responsive-property(padding-bottom, $padding-y, 2);
+            }
+
+            .block__image__inner{
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
+
+            img{
+                position: absolute;
+
+                height: 100%;
+                width: auto;
+                max-width: none;
+            }
+
+
+            &.image-position--right{
+                .block__image{
+                    grid-column-start: 8;
+                    grid-column-end: 14;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
+
+                img{
+                    top: 0px;
+                    left: 0px;
+                }
+            }
+
+            &.image-position--left{
+                .block__image{
+                    grid-column-start: 2;
+                    grid-column-end: 8;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
+
+                img{
+                    top: 0px;
+                    right: 0px;
+                }
+            }
+        }
+
+        &.image-layout--cover{
+            height: 80vh;
+
+            .block__image__inner{
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
+
+            img{
+                @include object-fit();
+            }
+
+            &.image-position--right{
+                .block__image{
+                    grid-column-start: 8;
+                    grid-column-end: 15;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
+            }
+
+            &.image-position--left{
+                .block__image{
+                    grid-column-start: 1;
+                    grid-column-end: 8;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(xlarge){
+        grid-template-columns: 1fr repeat(12, $max-column-width) 1fr;
+    }
+}
+
+
+
+/*
+    Playground classes?
+*/
+.block-text-image-v2-bggradient {
+    &.image-position--right{
+        @include breakpoint(large){
+            background: linear-gradient(90deg, $gray_light3 0%, $gray_light3 calc(50% + 90px), $white calc(50% + 90px));
+
+            h1, h2, p{
+                color: $white;
+                color: $text-color;
+            }
+        }
+    }
+
+    &.image-position--left{
+        @include breakpoint(large){
+            background: linear-gradient(90deg, $white 0%, $white calc(50% - 90px), $gray_light3 calc(50% - 90px));
+
+            h1, h2, p{
+                color: $white;
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.block-text-image-v2-bggradient-grid{
+    position: relative;
+
+    .background{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        @include breakpoint(large){
+            display: grid;
+            grid-template-columns: 0 repeat(12, 1fr) 0;
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        @include breakpoint(xxlarge){
+            grid-template-columns: 1fr repeat(12, $max-column-width) 1fr;
+        }
+    }
+
+    .background__inner{
+        background: $gray_light3;
+    }
+
+    &.image-position--right{
+        .background__inner{
+            grid-column-start: 2;
+            grid-column-end: 15;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+    }
+
+    &.image-position--left{
+        .background__inner{
+            grid-column-start: 1;
+            grid-column-end: 14;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+/*
+    All Active links in all menus
+*/
+
+.current-menu-item {
+    &>a {
+        color: $brand;
+    }
+}
+
+
+/*
+    Spceific style fot Main menu only
+*/
+
+#main-menu {
+    /*
+        All links in Main menu
+    */
+    a {}
+    /*
+        Main menu: li - level 1
+    */
+    &>ul {
+        &>li {
+            /*
+                Specific style for a in li - level 1 only
+            */
+            &>a {
+                font-size: rem-calc(16);
+                &:hover {
+                    color: $brand;
+                }
+            }
+            /*
+                Active links for li - level 1 only
+            */
+            &.current-menu-ancestor,
+            &.current-menu-item {
+                &>a {
+                    font-weight: bold;
+                    color: $brand;
+                }
+            }
+        }
+    }
+}

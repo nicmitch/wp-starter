@@ -1,0 +1,27 @@
+#breadcrumbs{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 11px;
+
+    span{
+        & > a,
+        & > span{
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+    }
+
+    a{
+        color: $gray_light2;
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+            color: $brand;
+        }
+    }
+
+    .current {
+        opacity: 0.6;
+    }
+}

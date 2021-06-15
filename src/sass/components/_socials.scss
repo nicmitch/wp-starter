@@ -1,0 +1,75 @@
+.socials {
+    .socials--item {
+        text-decoration: none;
+        padding: 5px 10px;
+        i {
+            transition: $transitions-default-linear;
+            img {
+                max-width: 32px;
+                opacity: 0.8;
+            }
+            @include breakpoint(medium) {}
+            @include breakpoint(large) {}
+        }
+        &:hover {
+            i {
+                color: $primary-color;
+            }
+        }
+        &:first-of-type {
+            padding-left: 0;
+        }
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
+    a {
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+//Socials with slide effect
+.socials {
+    &.slide-effect {
+        .socials--item {
+            position: relative;
+            float: left;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 35px;
+            text-align: center;
+            font-size: 22px;
+            text-decoration: none;
+            overflow: hidden;
+            color: $text-color;
+            margin-right: 15px;
+            i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: $transitions-default-linear;
+            }
+            i.hover {
+                top: 150%;
+            }
+            &:hover,
+            &:active {
+                i {
+                    color: $brand;
+                }
+                i.default {
+                    top: -50%;
+                }
+                i.hover {
+                    top: 50%;
+                }
+            }
+        }
+    }
+}

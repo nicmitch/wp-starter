@@ -1,0 +1,49 @@
+.is-reveal-open {
+    body {
+        width: 100%;
+    }
+}
+
+.reveal {
+    padding: 40px;
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-size: rem-calc(20px);
+    }
+}
+
+.close-button {
+    right: 5px;
+    top: 0px;
+    color: $black0;
+    width: 50px;
+    height: 50px;
+    line-height: 1;
+    text-align: center;
+    transition: $transitions-default-fast;
+    &:hover {
+        color: $brand;
+    }
+}
+
+.reveal-overlay {
+    transition: $transitions-default-linear-slow;
+}
+
+
+/*
+	Reveal animations
+*/
+
+.reveal-overlay {
+    transition: $transitions-default;
+    display: block !important;
+    visibility: hidden;
+    opacity: 0;
+    &.open {
+        visibility: visible;
+        opacity: 1;
+    }
+}

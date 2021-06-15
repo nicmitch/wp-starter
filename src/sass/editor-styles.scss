@@ -1,0 +1,34 @@
+@import 'functions/utils';
+@import 'functions/cubic-bezier';
+@import 'variables';
+@import 'mixins/basic';
+// @import 'mixins/font-face';
+// Responsive Font Sizes with RFS package (to be installed)
+// @import "rfs/scss";
+// @import 'mixins/res-prop';
+// Include foundation
+// @import "./vendors/foundation/foundation";
+@import 'vendors/foundation/foundation-settings';
+@import "foundation-sites/scss/foundation";
+@import 'vendors/foundation/foundation-includes';
+//@import 'swiper/css/swiper';
+
+/*
+    Base
+*/
+// @import './base/columns';
+@import './base/utilities';
+@import './base/basic_elements';
+@import './base/typography';
+@import './base/commons';
+
+@import '../../template-parts/components/**/style.scss';
+@import '../../template-parts/blocks/**/style.scss';
+
+#tinymce {
+  padding: 10px;
+
+  &.wp-autoresize {
+    padding: 10px !important;
+  }
+}

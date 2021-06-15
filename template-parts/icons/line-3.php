@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.999" height="4.565"><path id="hamb-line-3" d="M0 1c3.5 0 3.5 2.565 7 2.565S10.5 1 14 1s3.5 2.565 7 2.565S24.5 1 28 1" fill="none" stroke="#191919" stroke-miterlimit="10" stroke-width="2"/></svg>

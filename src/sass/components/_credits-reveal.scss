@@ -1,0 +1,30 @@
+#credits-modal{
+    color: $black0;
+
+    .reveal__title{
+        text-transform: uppercase;
+        font-size: 16px;
+        color: $text-color;
+        margin: 0px;
+    }
+
+    .reveal__logo{
+        img{
+            width: 70px;
+        }
+    }
+
+    .reveal__text{
+        margin-top: 10px;
+        font-size: 16px;
+
+        a{
+            color: $black0;
+        }
+
+        p:last-child{
+            margin-bottom: 0px;
+        }
+
+    }
+}

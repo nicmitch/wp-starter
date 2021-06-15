@@ -1,0 +1,41 @@
+
+.marquee {
+    font-weight: 300;
+    background-color: $brand;
+    height: 45px;
+    letter-spacing: 1px;
+    position: relative;
+    overflow-x: hidden;
+
+    &, p {
+        margin: 0;
+        color: #FFF;
+    }
+
+    &__inner {
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: marquee 50s linear infinite;
+    }
+
+    @include breakpoint(small only) {
+        font-size: rem-calc(15);
+    }
+
+    @include breakpoint(medium) {
+        height: 55px;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translate(0, -50%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
