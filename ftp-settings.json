@@ -1,14 +1,14 @@
 {
     "staging": {
-        "host": "ginkybox.ch",
-        "username": "main@ginkybox.ch",
-        "password": "1+4+#hv2$Cv#",
-        "basedir": "/ginkybox.ch/public_html/wp-content/themes/ginkybox/"
+        "host": "",
+        "username": "",
+        "password": "",
+        "basedir": ""
     },
     "public": {
-        "host": "ginkybox.ch",
-        "username": "main@ginkybox.ch",
-        "password": "1+4+#hv2$Cv#",
-        "basedir": "/ginkybox.ch/public_html/wp-content/themes/ginkybox/"
+        "host": "",
+        "username": "",
+        "password": "",
+        "basedir": ""
     }
 }

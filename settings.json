@@ -1,5 +1,5 @@
 {
-    "devSiteName": "https://www.wp-starter.test",
+    "devSiteName": "https://www.wpstarter.test",
 
     "css": {
         "sassMainFiles": "./src/sass/*.scss",

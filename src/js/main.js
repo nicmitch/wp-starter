@@ -10,4 +10,3 @@ countdown.init();
 foundation.init();
 scrollToEvents.init();
 sliders.init();
-woocommerce.init();

@@ -81,7 +81,8 @@ function jsLint() {
 function jsDev() {
     return src(settings.js.entry)
         .pipe(webpack(require('./webpack-dev.config.js'), webpackBundler))
-        .pipe(dest(settings.js.buildDir));
+        .pipe(dest(settings.js.buildDir))
+        .pipe(browserSync.reload());
 }
 
 function jsProd() {

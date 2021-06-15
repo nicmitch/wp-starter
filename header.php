@@ -35,7 +35,7 @@
 
 					<div id="logo" class="column expand shrink">
 						<a href="<?php echo bloginfo( 'url' ); ?>">
-							<img src="<?php echo asset_path('images/logo.svg'); ?>" width="200" height="41" alt="Ginky logo">
+							<img src="<?php echo asset_path('images/logo.svg'); ?>" width="200" height="41" alt="<?php bloginfo('sitename'); ?> logo">
 						</a>
 					</div>
 

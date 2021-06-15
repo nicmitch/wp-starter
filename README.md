@@ -3,11 +3,9 @@
 2.  Modificare il file: `settings.json`
   1.  'publicPath' : path rel tema (es. '/wp-content/themes/nometema')
   2.  'devSiteName' : url sito web dev (es. 'http://www.nomesitoweb.test')
-2.  Lanciare il comando: `gulp`
-
-### Nel caso in cui il progetto sia un tema wordpress
-1. Cambiare il **Theme Name** nello style.css ed eventualmente lo **screenshot**
-2. Per comodità tra l'ambiente di sviluppo e l'ambiente di Staging/Deploy si può utilizzare questo wp-config settings https://github.com/nicmitch/multi-wp-config
+3.  Lanciare il comando: `gulp`
+4. Cambiare il **Theme Name** nello style.css ed eventualmente lo **screenshot**
+5. Per comodità tra l'ambiente di sviluppo e l'ambiente di Staging/Deploy si può utilizzare questo wp-config settings https://github.com/nicmitch/multi-wp-config
 
 ## Build for staging
 1.  Caricare via ftp (previa compilazione del file ftp-settings.json): `gulp deploy`
