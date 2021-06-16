@@ -100,3 +100,32 @@ if( function_exists('acf_add_options_page') ) {
     'redirect'    => false
   ));
 }
+
+
+// Utility function related to using ACF with WPML plugin installed (and multiple languages defined)
+// Restituisce la lingua di default
+function cl_acf_set_language() {
+    return acf_get_setting('default_language');
+}
+
+// Restituisce il field in base alla lingua di default
+function get_acf_global_option_default($name) {
+  add_filter('acf/settings/current_language', 'cl_acf_set_language', 100);
+  $option = get_field($name, 'option');
+  remove_filter('acf/settings/current_language', 'cl_acf_set_language', 100);
+  return $option;
+}
+
+
+// Restituisce il field globale e in caso non esista resituisce il default
+function get_acf_global_option($name){
+    $return_field = get_field($name, 'option');
+
+    if(empty($return_field)){
+        if ( function_exists('icl_object_id') ) {
+            $return_field = get_acf_global_option_default($name);
+        }
+    }
+
+    return $return_field;
+}
